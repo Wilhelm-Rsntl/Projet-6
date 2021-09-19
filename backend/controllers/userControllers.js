@@ -1,13 +1,8 @@
 const bcrypt = require('bcrypt');
-
 const jwt = require('jsonwebtoken');
-
 const secretKey = process.env.TOKEN_SECRETE_KEY;
-
 const User = require('../models/userModels');
-
 const passwordValidator = require('password-validator');
-
 const schemaPassword = require("../models/passwordModels")
 
 exports.signup = (req, res, next) => {

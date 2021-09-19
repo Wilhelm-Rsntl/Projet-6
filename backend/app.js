@@ -7,12 +7,10 @@ require('dotenv').config()
 
 const saucesRoutes = require('./routes/saucesRoutes.js');
 const userRoutes = require('./routes/userRoutes.js');
-
 const app = express();
-
 const mongoSanitize = require('express-mongo-sanitize');
-
 const rateLimit = require("express-rate-limit");
+
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000, //15 minutes
   max: 100, //chaque IP est limitée à 100 requétes

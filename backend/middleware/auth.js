@@ -1,5 +1,4 @@
 const jwt = require('jsonwebtoken');
-
 const secretKey = process.env.TOKEN_SECRETE_KEY;
 
 module.exports = (req, res, next) => {
@@ -11,6 +10,8 @@ module.exports = (req, res, next) => {
         if (req.body.userId && req.body.userId !== userId){
             throw 'User Id non valable';
         } else {
+            /*Ce middleware est utilisé par d'autres middlewares avant de faire quoi que se soit. si l'authentification rate,
+                        alors il bloque le processus. Sinon il passe au middleware suivant.*/
             next();
         }
     } catch (error) {

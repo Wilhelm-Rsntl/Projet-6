@@ -1,5 +1,4 @@
 const Sauce= require('../models/saucesModels');
-
 const fs = require('fs');
 
 exports.likeSauce= (req, res, next) =>{
